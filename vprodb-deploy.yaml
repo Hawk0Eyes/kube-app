@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: vprodb
-  lablels:
+  labels:
     app: vprodb
 spec:
   selector:
@@ -36,7 +36,7 @@ spec:
           awsElasticBlockStore:
             volumeID: vol-0824861a7bd739c9b
             fsType: ext4
-      initcontainers:
+      initContainers:
         - name: busybox
           image: busybox:latest
           args: ["rm", "-rf", "/var/lib/mysql/lost+fount"]
